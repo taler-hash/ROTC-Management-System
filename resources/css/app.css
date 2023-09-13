@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .base-content{
+    @apply rounded-lg bg-white px-4 py-2 shadow-md shadow-gray-400 border border-gray-300
+  }
+  .input{
+    @apply rounded-md border border-gray-300 px-2 py-1
+  }
+  .button{
+    @apply rounded-md px-4 py-2 text-white font-bold
+  }
+}
