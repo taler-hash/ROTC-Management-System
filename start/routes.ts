@@ -26,6 +26,8 @@ Route.group(()=>{
 
     Route.post('/login','AuthController.login')
 
+    Route.get('/fetchUsers','UsersController.fetchUsers')
+
 }).prefix('/api')
 
 

@@ -16,10 +16,12 @@ export default class AuthController {
                 const token = await auth.use('api').generate(user,{
                     expiresIn: '120 mins'
                 })
-                return token
+                response.plainCookie('rotcToken', token.token)
+
+                return response.status(200).json('success')
             }
             
-            return response.status(401).json({ message: 'Invalid credentials' })
+            return response.status(401).json([{ field:'noAccount',message: 'No account found!'}])
         }catch(err){
             return response.status(422).json(err.messages)
         }

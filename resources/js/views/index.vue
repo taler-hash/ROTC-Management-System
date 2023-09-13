@@ -3,3 +3,11 @@
         <router-view></router-view>
     </div>
 </template>
+<script>
+export default{
+
+    beforeMount(){
+        console.log('test')
+    }
+}
+</script>
