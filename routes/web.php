@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CadetsController;
+use App\Http\Controllers\CadetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +17,11 @@ use App\Http\Controllers\CadetsController;
 
 
 Route::prefix('/api')->group(function () {
-    Route::get('/cadets', [CadetsController::class, 'getCadets']);
+
+    Route::prefix('/cadet')->group(function () {
+        Route::get('/', [CadetController::class, 'get']);
+        Route::post('/store', [CadetController::class, 'store']);
+    });
 });
 
 Route::get('{any?}', function () {
