@@ -10,4 +10,6 @@ class Cadets extends Model
     use HasFactory;
 
     protected $table = 'cadets';
+
+    protected $fillable = ['user_name', 'full_name','password','email', 'role'];
 }
